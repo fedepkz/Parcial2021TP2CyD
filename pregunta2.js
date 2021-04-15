@@ -1,4 +1,4 @@
- 
+
 /**
  * Con el objeto de inventario, se pide desarrollor una function que reciba como parametro
  * el articulo (shoes, socks, shirts, pants) y una cantidad. Si la cantidad es menor o igual a la cantidad 
@@ -7,18 +7,26 @@
  * 
  */
 
- const inventory = {
-    shoes: 10,
-    socks: 6,
-    shirts: 10,
-    pants: 5,
+const inventory = {
+  shoes: 10,
+  socks: 6,
+  shirts: 10,
+  pants: 5,
+}
+
+
+const sale = function (article, cant) {
+  if (inventory[article] >= cant) {
+    inventory[article] -= cant;
+    return 200;
+  }
+  else {
+    return 500;
   }
 
-const sale = function (article, cant){
-  
 }
 
 // TESTS (no modificar)
-console.log(sale('shoes',8) === 200 && inventory.shoes === 2);
-console.log(sale('shoes',3) === 500 && inventory.shoes === 2);
-console.log(sale('pants',5) === 200 && inventory.pants === 0);
+console.log(sale('shoes', 8) === 200 && inventory.shoes === 2);
+console.log(sale('shoes', 3) === 500 && inventory.shoes === 2);
+console.log(sale('pants', 5) === 200 && inventory.pants === 0);
